@@ -37,7 +37,7 @@ public class WebConfig  extends WebMvcConfigurationSupport {
                         jgen.writeString("");
                     }
                 });
-        // 进行HTML解码
+        // HTML decoding
         objectMapper.registerModule(new SimpleModule().addSerializer(
                 String.class, new JsonSerializer<String>() {
                     @Override
@@ -60,7 +60,6 @@ public class WebConfig  extends WebMvcConfigurationSupport {
 
     /**
      * extends from WebMvcConfigurationSupport，the yml config lost
-     *
      * @param registry
      */
     @Override
@@ -76,7 +75,7 @@ public class WebConfig  extends WebMvcConfigurationSupport {
 
 
     /**
-     * 配置servlet处理
+     * config servlet
      */
     @Override
     public void configureDefaultServletHandling(
