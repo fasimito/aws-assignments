@@ -7,6 +7,7 @@ import com.aws.utils.RequestLimit;
 import com.aws.utils.ShortUrlTool;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -27,8 +28,11 @@ public class ShortUrlController {
     private ServerConfig serverConfig;
     @ResponseBody
     @RequestMapping(value ="/short", method= RequestMethod.POST)
-    @ApiOperation(value="generate Short URL from the original long URL and store into database", notes="short: 仅short url正确返回")
-    @ApiImplicitParam(paramType="post", name = "url", value = "原始地址", required = true, dataType = "String")
+    @ApiOperation(value="generate Short URL from the original long URL and store into database", notes="short url is right, it could return")
+    @ApiImplicitParams({
+            @ApiImplicitParam(paramType="post", name = "url", value = "Original Address", required = true, dataType = "String"),
+            @ApiImplicitParam(paramType="post", name = "comments", value = "The Comments", required = false, dataType = "String")
+    })
     public String generateShortUrl(@RequestParam String url,
                                    @RequestParam String comments) {
         String[] keys = ShortUrlTool.ShortText(url);

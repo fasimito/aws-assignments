@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <script type="text/javascript" src="static/jquery/jquery-3.4.0.js"></script>
-    <script type="text/javascript" src="static/js/urls.js"></script>
+    <script type="text/javascript" src="jquery/jquery-3.4.0.js"></script>
+    <script type="text/javascript" src="js/urls.js"></script>
 </head>
 <body>
     <div align="center">
