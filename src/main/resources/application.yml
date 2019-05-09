@@ -1,11 +1,6 @@
 server:
   port: 8080
 spring:
-  mvc:
-    view:
-      prefix: /WEB-INF/jsp/
-      suffix: .jsp
-      static-path-pattern: /static/**
   datasource:
     name: test
     url: jdbc:mysql://127.0.0.1:3306/aws-assignment

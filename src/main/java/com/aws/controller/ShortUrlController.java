@@ -30,8 +30,8 @@ public class ShortUrlController {
     @RequestMapping(value ="/short", method= RequestMethod.POST)
     @ApiOperation(value="generate Short URL from the original long URL and store into database", notes="short url is right, it could return")
     @ApiImplicitParams({
-            @ApiImplicitParam(paramType="post", name = "url", value = "Original Address", required = true, dataType = "String"),
-            @ApiImplicitParam(paramType="post", name = "comments", value = "The Comments", required = false, dataType = "String")
+            @ApiImplicitParam(paramType="query", name = "url", value = "www.test.com", required = true, dataType = "String"),
+            @ApiImplicitParam(paramType="query", name = "comments", value = "comments", required = false, dataType = "String")
     })
     public String generateShortUrl(@RequestParam String url,
                                    @RequestParam String comments) {
