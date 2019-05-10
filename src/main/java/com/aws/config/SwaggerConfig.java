@@ -27,7 +27,7 @@ public class SwaggerConfig {
         return new ApiInfoBuilder()
                 .title("Use Swagger2 build RESTful APIs")
                 .description("AWS assignments")
-                .termsOfServiceUrl("http://localhost:8080/url/short")
+                .termsOfServiceUrl("http://localhost:8080/swagger-ui.html")
                 .contact("xupeng.ma")
                 .version("1.0")
                 .build();

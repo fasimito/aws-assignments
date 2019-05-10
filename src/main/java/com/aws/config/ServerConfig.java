@@ -9,7 +9,6 @@ import java.net.UnknownHostException;
 @Component
 public class ServerConfig  implements ApplicationListener<WebServerInitializedEvent> {
     private int serverPort;
-
     public String getUrl() {
         InetAddress address = null;
         try {

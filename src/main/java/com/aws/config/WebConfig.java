@@ -73,7 +73,6 @@ public class WebConfig  extends WebMvcConfigurationSupport {
         super.addResourceHandlers(registry);
     }
 
-
     /**
      * config servlet
      */
