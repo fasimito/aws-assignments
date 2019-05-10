@@ -50,9 +50,8 @@ public class ShortUrlControllerTest {
 
     @Test
     public void redirect() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.post("/url/${key}")
+        mvc.perform(MockMvcRequestBuilders.post("/url/3UBR73")
             .contentType(MediaType.APPLICATION_JSON_UTF8)
-            .accept(MediaType.APPLICATION_JSON))
-            .andReturn().toString();
+            .accept(MediaType.APPLICATION_JSON));
     }
 }

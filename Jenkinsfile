@@ -1,22 +1,21 @@
 node{
     stage('git clone'){
         //check CODE
-        git credentialsId: 'c9b13f30-aeb4-478c-a494-9c0e8b918f98', url: 'git@gitee.com:fasimito/hello-ThoughtWorks.git'
-    }
-
-    stage('gradle build'){
-        dir('./'){
-            sh '''
-            /opt/gradle/gradle-4.10.3/bin/gradle wrapper
-			./gradlew build
-		    '''
-        }
+        git credentialsId: 'c9b13f30-aeb4-478c-a494-9c0e8b918f98', url: 'https://github.com/fasimito/aws-assignments.git'
     }
 
     stage('run test'){
         dir('./'){
             sh '''
-			./gradlew test
+            mvn test
+            '''
+        }
+    }
+
+    stage('mvn build'){
+        dir('./'){
+            sh '''
+            mvn clean package
 		    '''
         }
     }
