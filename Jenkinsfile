@@ -15,7 +15,7 @@ node{
     stage('mvn build'){
         dir('./'){
             sh '''
-            mvn clean package
+            mvn clean package -Dmaven.test.skip=true
 		    '''
         }
     }
