@@ -29,10 +29,15 @@ node{
 		# construct docker image
 		if [ -n "$IMAGE_ID" ]; then
 			echo "the $JOB_NAME image is already exist，the id is: $IMAGE_ID"
+			CONTAINER_ID=$(docker ps | grep "$JOB_NAME" | awk \'{print $1}\')
+			if [ -n "$CONTAINER_ID" ]; then
+			    docker rm -f $CONTAINER_ID
+			fi
+			docker rmi -f $IMAGE_ID
 		else
 			echo "the $JOB_NAME image does not exist， start construct the image"
-			docker build --build-arg work_dir=$WORK_DIR -t $JOB_NAME .
 		fi
+		docker build --build-arg work_dir=$WORK_DIR -t $JOB_NAME .
 		'''
 	}
 
