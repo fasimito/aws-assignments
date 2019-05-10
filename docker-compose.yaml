@@ -6,9 +6,20 @@ version: '2'
 
 services:
 
+  nginx:
+    image: nginx
+    restart: always
+    container_name: nginx
+    volumes:
+          - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+
   aws-assignments:
     image: aws-assignments
     restart: always
     container_name: aws-assignments
     ports:
       - 8080:8080
+    depends_on:
+      - nginx
