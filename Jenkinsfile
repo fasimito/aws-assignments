@@ -12,7 +12,7 @@ node{
         }
     }
 
-    stage('mvn build'){
+    stage('run build'){
         dir('./'){
             sh '''
             mvn clean package -Dmaven.test.skip=true
@@ -50,7 +50,7 @@ node{
 			docker-compose restart
 			echo "the container $JOB_NAME restart successfully"
 		else
-			echo "the container $JOB_NAME does not exist，use 'docker-compose run' create the container..."
+			echo "the container $JOB_NAME does not exist，use 'docker-compose up' create the container..."
 			docker-compose up -d
 			echo "the container $JOB_NAME create successfully"
 		fi
