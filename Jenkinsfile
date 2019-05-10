@@ -31,7 +31,7 @@ node{
 			echo "the $JOB_NAME image is already exist，the id is: $IMAGE_ID"
 			CONTAINER_ID=$(docker ps | grep "$JOB_NAME" | awk \'{print $1}\')
 			if [ -n "$CONTAINER_ID" ]; then
-			    docker rm -f $CONTAINER_ID
+			    docker-compose down
 			fi
 			docker rmi -f $IMAGE_ID
 		else
