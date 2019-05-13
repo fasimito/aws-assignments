@@ -53,11 +53,11 @@ node{
 		CONTAINER_ID=$(sudo docker ps | grep "$JOB_NAME" | awk \'{print $1}\')
 		if [ -n "$CONTAINER_ID" ]; then
 			echo "the container $JOB_NAME ia already exist，the containerId is :$CONTAINER_ID,restart the docker container ..."
-			sudo docker-compose restart
+			docker-compose restart
 			echo "the container $JOB_NAME restart successfully"
 		else
 			echo "the container $JOB_NAME does not exist，use 'docker-compose up' create the container..."
-			sudo docker-compose up -d
+			docker-compose up -d
 			echo "the container $JOB_NAME create successfully"
 		fi
 		'''
