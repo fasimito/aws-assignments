@@ -1,13 +1,7 @@
 node{
     stage('Prepare ENV'){
-        dir('./'){
-            sh '''
-            export JAVA_HOME=/usr/local/jdk1.8.0_191
-            export PATH=$PATH:$JAVA_HOME/bin
-            export MAVEN_HOME=/usr/local/apache-maven-3.6.1
-            export PATH=$PATH:$MAVEN_HOME/bin
-            '''
-        }
+        export M2_HOME=/usr/local/apache-maven-3.6.1
+        export PATH=$PATH:$M2_HOME/bin
     }
     stage('git clone'){
         //check CODE
