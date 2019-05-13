@@ -56,7 +56,7 @@ node{
 			sudo docker rm -f $CONTAINER_ID
 			echo "the container $JOB_NAME rm successfully"
 		fi
-			sudo docker run -p 9090:9090 aws-assignments
+			sudo docker run -d -p 9090:9090 aws-assignments
 			echo "the container $JOB_NAME create successfully"
 		'''
 	}
