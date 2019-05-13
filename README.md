@@ -2,7 +2,9 @@
 this is used to develop the AWS assignment
 
 ## package process
-> mvn clean
+
+the junit test method is:
+> mvn test
 
 compile the projecgt:
 > mvn compile
