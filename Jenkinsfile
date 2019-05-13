@@ -1,7 +1,7 @@
 node{
     stage('git clone'){
         //check CODE
-        git credentialsId: '0753f728-46f3-4d67-b913-bfe696653c3d', url: 'https://github.com/fasimito/aws-assignments.git'
+        git credentialsId: 'bf80087d-fe5c-4dc9-93fe-75fd7dff4049', url: 'https://github.com/fasimito/aws-assignments.git'
     }
 
     stage('run test'){
