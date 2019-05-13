@@ -1,4 +1,14 @@
 node{
+    stage('Prepare ENV'){
+        dir('./'){
+            sh '''
+            export JAVA_HOME=/usr/local/jdk1.8.0_191
+            export PATH=$PATH:$JAVA_HOME/bin
+            export MAVEN_HOME=/usr/local/apache-maven-3.6.1
+            export PATH=$PATH:$MAVEN_HOME/bin
+            '''
+        }
+    }
     stage('git clone'){
         //check CODE
         git credentialsId: 'bf80087d-fe5c-4dc9-93fe-75fd7dff4049', url: 'https://github.com/fasimito/aws-assignments.git'
