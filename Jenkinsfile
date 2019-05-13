@@ -52,14 +52,12 @@ node{
 		#container ID
 		CONTAINER_ID=$(sudo docker ps | grep "$JOB_NAME" | awk \'{print $1}\')
 		if [ -n "$CONTAINER_ID" ]; then
-			echo "the container $JOB_NAME ia already exist，the containerId is :$CONTAINER_ID,restart the docker container ..."
-			docker-compose restart
-			echo "the container $JOB_NAME restart successfully"
-		else
-			echo "the container $JOB_NAME does not exist，use 'docker-compose up' create the container..."
-			docker-compose up -d
-			echo "the container $JOB_NAME create successfully"
+			echo "the container $JOB_NAME ia already exist，the containerId is :$CONTAINER_ID,rm the docker container ..."
+			sudo docker rm -f $CONTAINER_ID
+			echo "the container $JOB_NAME rm successfully"
 		fi
+			sudo docker run -p 9090:9090 aws-assignments
+			echo "the container $JOB_NAME create successfully"
 		'''
 	}
 }
