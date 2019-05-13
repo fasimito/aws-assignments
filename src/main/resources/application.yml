@@ -1,5 +1,6 @@
 server:
   port: 9090
+  ip: 18.223.106.64
 spring:
   datasource:
     name: test
