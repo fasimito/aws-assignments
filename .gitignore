@@ -9,6 +9,7 @@ target
 
 .idea
 .idea/vcs.xml
+com-aws-assignments.iml
 
 # Runtime data
 pids

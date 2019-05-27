@@ -1,10 +1,10 @@
 server:
   port: 9090
-  ip: 18.223.106.64
+  ip: 192.168.116.131
 spring:
   datasource:
     name: test
-    url: jdbc:mysql://18.223.106.64:3306/aws-assignment
+    url: jdbc:mysql://192.168.116.131:3306/aws-assignment
     username: root
     password: 123456
     # 使用druid数据源
