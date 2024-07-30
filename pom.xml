@@ -13,7 +13,7 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
     <properties>
-        <bootstrap.version>3.3.7</bootstrap.version>
+        <bootstrap.version>3.4.0</bootstrap.version>
     </properties>
     <dependencies>
         <dependency>
